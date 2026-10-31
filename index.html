@@ -3,139 +3,344 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Recepcionista — Mondou San Pedro</title>
+<title>Anfitriona Mondou — Recepción · San Pedro</title>
+<meta name="description" content="Únete a Mondou Luxury Salon en San Pedro. Ingreso potencial de más de $20,000 al mes, nómina con prestaciones y plan de carrera.">
+<meta property="og:title" content="Anfitriona Mondou · San Pedro">
+<meta property="og:description" content="Ingreso potencial +$20,000 al mes · Plan de carrera hasta Gerente de Sucursal">
+<meta property="og:image" content="salon.jpg">
+<meta name="theme-color" content="#0a0a0a">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,500&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+<!-- Meta Pixel -->
+<script>
+  var PIXEL_ID = ''; // ← ID del Pixel de Meta
+  if (PIXEL_ID) {
+    !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+    n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
+    document,'script','https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', PIXEL_ID); fbq('track', 'PageView');
+  }
+  function track(ev, data){ try{ if(window.fbq) fbq('track', ev, data||{}); }catch(e){} }
+</script>
+
 <style>
   :root{
-    --negro:#0a0a0a; --negro-2:#121212;
-    --oro:#c9a24b; --oro-claro:#e6cd87;
-    --crema:#f3ead6; --gris:#9a9a9a; --wa:#1ebd5b;
+    --negro:#0a0a0a; --negro-2:#121212; --negro-3:#17140c;
+    --oro:#c9a24b; --oro-claro:#e6cd87; --oro-osc:#9C7A1E;
+    --crema:#f3ead6; --gris:#9a9a9a; --linea:rgba(201,162,75,.18);
   }
   *{margin:0;padding:0;box-sizing:border-box}
   html{scroll-behavior:smooth}
   body{background:var(--negro);color:var(--crema);font-family:'Jost',sans-serif;font-weight:300;line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
-  .wrap{max-width:760px;margin:0 auto;padding:0 24px}
+  .wrap{max-width:760px;margin:0 auto;padding:0 20px}
+  .serif{font-family:'Cormorant Garamond',serif}
+  .oro-txt{background:linear-gradient(90deg,var(--oro),var(--oro-claro),var(--oro));-webkit-background-clip:text;background-clip:text;color:transparent}
 
-  .hero{min-height:auto;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;position:relative;padding:100px 24px 80px;background:radial-gradient(circle at 50% 30%, rgba(201,162,75,.10), transparent 60%),var(--negro);border-bottom:1px solid rgba(201,162,75,.18)}
-  .marca{font-family:'Cormorant Garamond',serif;font-size:26px;letter-spacing:.5em;color:var(--oro);text-transform:uppercase;margin-bottom:6px;opacity:0;animation:fade .9s ease forwards .1s}
-  .marca-sub{font-size:11px;letter-spacing:.42em;text-transform:uppercase;color:var(--gris);margin-bottom:48px;opacity:0;animation:fade .9s ease forwards .25s}
-  .eyebrow{font-size:12px;letter-spacing:.34em;text-transform:uppercase;color:var(--oro);margin-bottom:22px;opacity:0;animation:fade .9s ease forwards .4s}
-  h1{font-family:'Cormorant Garamond',serif;font-weight:600;font-size:clamp(42px,9vw,72px);line-height:1.04;letter-spacing:.01em;margin-bottom:8px;opacity:0;animation:fade 1s ease forwards .5s}
-  h1 .acento{display:block;background:linear-gradient(90deg,var(--oro),var(--oro-claro),var(--oro));-webkit-background-clip:text;background-clip:text;color:transparent}
-  .ciudad{font-size:14px;letter-spacing:.3em;text-transform:uppercase;color:var(--gris);margin:18px 0 30px;opacity:0;animation:fade 1s ease forwards .65s}
-  .lema{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:clamp(20px,4.4vw,26px);color:var(--crema);max-width:540px;margin:0 auto 42px;opacity:0;animation:fade 1s ease forwards .75s}
+  /* HERO */
+  .hero{position:relative;min-height:92vh;display:flex;flex-direction:column;justify-content:flex-end;text-align:center;padding:0 20px 56px;overflow:hidden}
+  .hero-img{position:absolute;inset:0;background:url('salon.jpg') center 30%/cover no-repeat;transform:scale(1.04);animation:zoom 14s ease-out forwards}
+  .hero::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(10,10,10,.55) 0%,rgba(10,10,10,.05) 28%,rgba(10,10,10,.35) 52%,rgba(10,10,10,.92) 78%,var(--negro) 100%)}
+  .hero-top{position:absolute;top:28px;left:0;right:0;z-index:2;text-align:center}
+  .marca{font-family:'Cormorant Garamond',serif;font-size:22px;letter-spacing:.5em;color:var(--oro-claro);text-transform:uppercase;padding-left:.5em}
+  .marca-sub{font-size:10px;letter-spacing:.42em;text-transform:uppercase;color:rgba(243,234,214,.75);padding-left:.42em}
+  .hero-body{position:relative;z-index:2;max-width:620px;margin:0 auto}
+  .eyebrow{display:inline-block;font-size:11px;letter-spacing:.3em;text-transform:uppercase;color:var(--oro-claro);border:1px solid rgba(230,205,135,.45);padding:7px 16px;border-radius:40px;margin-bottom:22px;background:rgba(10,10,10,.35);backdrop-filter:blur(6px)}
+  h1{font-family:'Cormorant Garamond',serif;font-weight:600;font-size:clamp(44px,11vw,78px);line-height:1;margin-bottom:16px}
+  h1 em{font-style:italic;font-weight:500}
+  .lema{font-size:clamp(16px,4vw,19px);color:var(--crema);max-width:520px;margin:0 auto 26px;font-weight:300}
+  .ingreso{display:inline-flex;flex-direction:column;align-items:center;margin-bottom:28px}
+  .ingreso .lbl{font-size:11px;letter-spacing:.3em;text-transform:uppercase;color:var(--gris)}
+  .ingreso .monto{font-family:'Cormorant Garamond',serif;font-weight:700;font-size:clamp(40px,10vw,60px);line-height:1.05}
+  .ingreso .sub{font-size:13px;color:var(--crema);opacity:.8;letter-spacing:.04em}
 
-  .wa-btn{display:inline-flex;align-items:center;gap:12px;background:linear-gradient(180deg,var(--oro-claro),var(--oro));color:#1a1306;font-family:'Jost',sans-serif;font-weight:600;font-size:16px;letter-spacing:.04em;padding:18px 36px;border-radius:60px;text-decoration:none;box-shadow:0 14px 34px rgba(201,162,75,.32);transition:transform .25s ease, box-shadow .25s ease}
-  .wa-btn:hover{transform:translateY(-3px);box-shadow:0 20px 44px rgba(201,162,75,.45)}
-  .wa-btn:active{transform:translateY(-1px)}
-  .wa-btn svg{width:22px;height:22px;flex-shrink:0}
-  .hero .wa-btn{opacity:0;animation:fade 1s ease forwards .9s}
+  .btn{display:inline-flex;align-items:center;justify-content:center;gap:12px;background:linear-gradient(180deg,var(--oro-claro),var(--oro));color:#1a1306;font-family:'Jost',sans-serif;font-weight:600;font-size:16px;letter-spacing:.05em;padding:18px 38px;border-radius:60px;text-decoration:none;border:0;cursor:pointer;box-shadow:0 14px 34px rgba(201,162,75,.32);transition:transform .25s ease,box-shadow .25s ease,opacity .25s}
+  .btn:hover{transform:translateY(-3px);box-shadow:0 20px 44px rgba(201,162,75,.45)}
+  .btn svg{width:22px;height:22px;flex-shrink:0}
+  .btn[disabled]{opacity:.4;cursor:not-allowed;transform:none;box-shadow:none}
+  .meta-chips{display:flex;flex-wrap:wrap;justify-content:center;gap:8px 18px;margin-top:22px;font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:rgba(243,234,214,.75)}
+  .meta-chips span::before{content:"◆";color:var(--oro);font-size:8px;margin-right:8px;vertical-align:2px}
 
-  .sueldo{text-align:center;padding:64px 24px;background:var(--negro-2);border-bottom:1px solid rgba(201,162,75,.12)}
-  .sueldo .label{font-size:12px;letter-spacing:.34em;text-transform:uppercase;color:var(--gris);margin-bottom:14px}
-  .sueldo .monto{font-family:'Cormorant Garamond',serif;font-weight:700;font-size:clamp(48px,12vw,84px);line-height:1;background:linear-gradient(90deg,var(--oro),var(--oro-claro));-webkit-background-clip:text;background-clip:text;color:transparent}
-  .sueldo .periodo{font-size:16px;letter-spacing:.18em;color:var(--crema);margin-top:6px;text-transform:uppercase}
-  .sueldo .propinas{font-size:14px;color:var(--oro);margin-top:18px;letter-spacing:.08em}
+  /* SECCIONES */
+  section.bloque{padding:72px 0;border-top:1px solid rgba(201,162,75,.08)}
+  .kicker{font-size:11px;letter-spacing:.34em;text-transform:uppercase;color:var(--oro);text-align:center;margin-bottom:10px}
+  .titulo{font-family:'Cormorant Garamond',serif;font-weight:600;font-size:clamp(30px,7vw,44px);text-align:center;line-height:1.1}
+  .titulo::after{content:"";display:block;width:48px;height:2px;background:linear-gradient(90deg,transparent,var(--oro),transparent);margin:18px auto 0}
+  .intro{text-align:center;color:var(--gris);max-width:540px;margin:18px auto 0;font-size:16px}
 
-  section.bloque{padding:64px 0}
-  .bloque-titulo{font-family:'Cormorant Garamond',serif;font-weight:600;font-size:clamp(30px,6vw,42px);text-align:center;margin-bottom:8px}
-  .bloque-titulo::after{content:"";display:block;width:48px;height:2px;background:linear-gradient(90deg,transparent,var(--oro),transparent);margin:18px auto 0}
-  .lista{margin-top:40px;display:grid;gap:2px}
-  .item{display:flex;align-items:center;gap:18px;padding:20px 22px;background:var(--negro-2);border:1px solid rgba(201,162,75,.10);transition:border-color .3s ease, background .3s ease}
-  .item:hover{border-color:rgba(201,162,75,.4);background:#171307}
-  .item .punto{width:8px;height:8px;border-radius:50%;flex-shrink:0;background:var(--oro);box-shadow:0 0 12px rgba(201,162,75,.7)}
-  .item span{font-size:17px;color:var(--crema);font-weight:400}
+  /* INGRESO */
+  .cards{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:40px}
+  .card{background:var(--negro-2);border:1px solid var(--linea);padding:26px 22px;border-radius:4px}
+  .card.full{grid-column:1/-1;background:linear-gradient(135deg,#1a150a,#0f0d08);border-color:rgba(201,162,75,.45);text-align:center;padding:34px 22px}
+  .card .c-lbl{font-size:11px;letter-spacing:.24em;text-transform:uppercase;color:var(--gris);margin-bottom:8px}
+  .card .c-val{font-family:'Cormorant Garamond',serif;font-weight:700;font-size:clamp(30px,7vw,40px);line-height:1.1;color:var(--crema)}
+  .card.full .c-val{font-size:clamp(44px,11vw,64px)}
+  .card .c-txt{font-size:14px;color:var(--gris);margin-top:6px}
 
-  .cierre{text-align:center;padding:80px 24px 100px;background:radial-gradient(circle at 50% 100%, rgba(201,162,75,.12), transparent 65%),var(--negro);border-top:1px solid rgba(201,162,75,.18)}
-  .cierre h2{font-family:'Cormorant Garamond',serif;font-weight:600;font-size:clamp(28px,6vw,40px);margin-bottom:14px}
-  .cierre p{color:var(--gris);font-size:15px;letter-spacing:.04em;margin-bottom:36px}
-  .cierre .nota{margin-top:40px;font-size:12px;letter-spacing:.28em;text-transform:uppercase;color:var(--gris)}
-  footer{text-align:center;padding:30px 24px;font-size:11px;letter-spacing:.3em;text-transform:uppercase;color:#555;background:var(--negro)}
+  /* CARRERA */
+  .ruta{position:relative;margin:44px auto 0;max-width:520px}
+  .ruta::before{content:"";position:absolute;left:23px;top:24px;bottom:24px;width:1px;background:linear-gradient(180deg,var(--oro),rgba(201,162,75,.15))}
+  .paso{position:relative;display:flex;gap:20px;align-items:flex-start;padding:14px 0}
+  .paso .n{flex-shrink:0;width:48px;height:48px;border-radius:50%;border:1px solid var(--oro);display:flex;align-items:center;justify-content:center;font-family:'Cormorant Garamond',serif;font-size:22px;color:var(--oro-claro);background:var(--negro);z-index:1}
+  .paso:first-child .n{background:linear-gradient(180deg,var(--oro-claro),var(--oro));color:#1a1306;border:0}
+  .paso h3{font-family:'Cormorant Garamond',serif;font-weight:600;font-size:24px;line-height:1.2;margin-top:4px}
+  .paso p{color:var(--gris);font-size:15px}
 
-  @keyframes fade{to{opacity:1}}
-  @media (prefers-reduced-motion:reduce){*{animation:none!important;opacity:1!important}}
-  .reveal{opacity:0;transform:translateY(24px);transition:opacity .7s ease, transform .7s ease}
+  /* LISTAS */
+  .lista{margin-top:36px;display:grid;gap:2px}
+  .item{display:flex;align-items:flex-start;gap:16px;padding:18px 20px;background:var(--negro-2);border:1px solid rgba(201,162,75,.10)}
+  .item .punto{width:7px;height:7px;border-radius:50%;flex-shrink:0;background:var(--oro);box-shadow:0 0 12px rgba(201,162,75,.7);margin-top:10px}
+  .item span{font-size:16px;color:var(--crema);font-weight:400}
+  .item small{display:block;color:var(--gris);font-size:14px;font-weight:300}
+
+  /* FORM */
+  .form-box{margin-top:36px;background:linear-gradient(180deg,#14110a,#0e0d0a);border:1px solid rgba(201,162,75,.35);border-radius:6px;padding:30px 22px}
+  .q{margin-bottom:26px}
+  .q label,.q .ql{display:block;font-size:15px;color:var(--crema);font-weight:400;margin-bottom:10px}
+  .q b{color:var(--oro);font-weight:500;margin-right:6px}
+  .q input{width:100%;background:var(--negro);border:1px solid rgba(201,162,75,.25);color:var(--crema);font-family:'Jost',sans-serif;font-size:16px;padding:14px 16px;border-radius:4px;outline:none;transition:border-color .2s}
+  .q input:focus{border-color:var(--oro)}
+  .q input::placeholder{color:#5c5c5c}
+  .opts{display:flex;flex-wrap:wrap;gap:8px}
+  .opt{background:var(--negro);border:1px solid rgba(201,162,75,.25);color:var(--crema);font-family:'Jost',sans-serif;font-size:14px;padding:11px 16px;border-radius:40px;cursor:pointer;transition:all .2s}
+  .opt:hover{border-color:var(--oro)}
+  .opt.on{background:linear-gradient(180deg,var(--oro-claro),var(--oro));color:#1a1306;border-color:transparent;font-weight:500}
+  .form-box .btn{width:100%;margin-top:6px}
+  .aviso{font-size:13px;color:var(--gris);text-align:center;margin-top:14px}
+  .aviso.warn{color:#e3b26a}
+
+  /* FAQ */
+  details{background:var(--negro-2);border:1px solid rgba(201,162,75,.10);margin-top:2px}
+  details summary{list-style:none;cursor:pointer;padding:18px 48px 18px 20px;font-size:16px;font-weight:400;position:relative}
+  details summary::-webkit-details-marker{display:none}
+  details summary::after{content:"+";position:absolute;right:20px;top:50%;transform:translateY(-50%);color:var(--oro);font-size:22px;font-weight:300}
+  details[open] summary::after{content:"–"}
+  details p{padding:0 20px 20px;color:var(--gris);font-size:15px}
+
+  footer{text-align:center;padding:40px 20px 120px;font-size:11px;letter-spacing:.3em;text-transform:uppercase;color:#555;border-top:1px solid rgba(201,162,75,.08)}
+
+  /* STICKY */
+  .sticky{position:fixed;left:0;right:0;bottom:0;z-index:50;padding:12px 16px calc(12px + env(safe-area-inset-bottom));background:linear-gradient(180deg,rgba(10,10,10,0),rgba(10,10,10,.95) 35%);transform:translateY(110%);transition:transform .35s ease}
+  .sticky.show{transform:none}
+  .sticky .btn{width:100%;max-width:520px;margin:0 auto;display:flex;padding:16px 20px}
+
+  @keyframes zoom{to{transform:scale(1)}}
+  @keyframes fade{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
+  .hero-body > *{opacity:0;animation:fade .9s ease forwards}
+  .hero-body > *:nth-child(1){animation-delay:.15s}.hero-body > *:nth-child(2){animation-delay:.3s}
+  .hero-body > *:nth-child(3){animation-delay:.45s}.hero-body > *:nth-child(4){animation-delay:.6s}
+  .hero-body > *:nth-child(5){animation-delay:.75s}.hero-body > *:nth-child(6){animation-delay:.9s}
+  .reveal{opacity:0;transform:translateY(22px);transition:opacity .7s ease,transform .7s ease}
   .reveal.visible{opacity:1;transform:none}
+  @media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important;opacity:1!important}}
+  @media (max-width:420px){.cards{grid-template-columns:1fr}}
 </style>
 </head>
 <body>
 
-  <header class="hero">
+<header class="hero">
+  <div class="hero-img" role="img" aria-label="Recepción de Mondou Luxury Salon en San Pedro"></div>
+  <div class="hero-top">
     <div class="marca">Mondou</div>
     <div class="marca-sub">Luxury Salon</div>
-    <div class="eyebrow">Vacante · Únete al equipo</div>
-    <h1>Recepcionista<span class="acento">Anfitriona</span></h1>
-    <div class="ciudad">San Pedro Garza García</div>
-    <p class="lema">¿Tienes don de gente, excelente presentación y te mueves bien bajo presión? Sé la primera cara de una experiencia premium.</p>
-    <a class="wa-btn" href="https://wa.me/528129442008?text=Hola%2C%20me%20interesa%20la%20vacante%20de%20Recepcionista%20en%20Mondou%20San%20Pedro.%20Quiero%20m%C3%A1s%20informaci%C3%B3n.">
-      <svg viewBox="0 0 32 32" fill="currentColor"><path d="M16 3C9.4 3 4 8.4 4 15c0 2.1.6 4.2 1.6 6L4 29l8.2-1.6c1.7.9 3.7 1.4 5.8 1.4 6.6 0 12-5.4 12-12S22.6 3 16 3zm0 21.8c-1.8 0-3.6-.5-5.1-1.4l-.4-.2-4.9 1 .9-4.8-.3-.4C5.2 18.3 4.7 16.7 4.7 15 4.7 8.8 9.8 3.7 16 3.7S27.3 8.8 27.3 15 22.2 24.8 16 24.8zm6.6-8.2c-.4-.2-2.1-1-2.4-1.1-.3-.1-.6-.2-.8.2-.2.4-.9 1.1-1.1 1.3-.2.2-.4.3-.8.1-.4-.2-1.5-.6-2.9-1.8-1.1-1-1.8-2.2-2-2.6-.2-.4 0-.6.2-.8.2-.2.4-.4.5-.7.2-.2.2-.4.4-.6.1-.3 0-.5 0-.7-.1-.2-.8-2-1.1-2.7-.3-.7-.6-.6-.8-.6h-.7c-.2 0-.6.1-.9.4-.3.4-1.2 1.2-1.2 2.9s1.2 3.4 1.4 3.6c.2.2 2.5 3.8 6 5.3.8.4 1.5.6 2 .7.8.3 1.6.2 2.2.1.7-.1 2.1-.8 2.4-1.7.3-.8.3-1.6.2-1.7-.1-.2-.3-.3-.7-.4z"/></svg>
-      Escríbenos por WhatsApp
-    </a>
-  </header>
-
-  <div class="sueldo">
-    <div class="label">Sueldo semanal</div>
-    <div class="monto">$3,000</div>
-    <div class="periodo">a la semana</div>
-    <div class="propinas">+ Comisiones y bonos (a partir del primer mes)</div>
   </div>
-
-  <section class="bloque">
-    <div class="wrap">
-      <h2 class="bloque-titulo reveal">Ofrecemos</h2>
-      <div class="lista">
-        <div class="item reveal"><span class="punto"></span><span>Estabilidad y ambiente premium</span></div>
-        <div class="item reveal"><span class="punto"></span><span>Prestaciones de ley</span></div>
-        <div class="item reveal"><span class="punto"></span><span>Capacitación continua</span></div>
-        <div class="item reveal"><span class="punto"></span><span>Comisiones y bonos por desempeño</span></div>
-      </div>
+  <div class="hero-body">
+    <div class="eyebrow">Vacante · San Pedro</div>
+    <h1>Anfitriona <em class="oro-txt">Mondou</em></h1>
+    <p class="lema">Sé la primera impresión del salón más exclusivo de San Pedro. Recepción, caja y experiencia del cliente, con un plan real para crecer.</p>
+    <div class="ingreso">
+      <span class="lbl">Ingreso potencial</span>
+      <span class="monto oro-txt">+$20,000</span>
+      <span class="sub">al mes · según desempeño</span>
     </div>
-  </section>
-
-  <section class="bloque" style="padding-top:0">
-    <div class="wrap">
-      <h2 class="bloque-titulo reveal">Buscamos</h2>
-      <div class="lista">
-        <div class="item reveal"><span class="punto"></span><span>Excelente presentación — total look negro</span></div>
-        <div class="item reveal"><span class="punto"></span><span>Organización y actitud resolutiva</span></div>
-        <div class="item reveal"><span class="punto"></span><span>Experiencia en atención al cliente premium o ventas</span></div>
-        <div class="item reveal"><span class="punto"></span><span>Inglés conversacional (deseable)</span></div>
-      </div>
-    </div>
-  </section>
-
-  <section class="bloque" style="padding-top:0">
-    <div class="wrap">
-      <h2 class="bloque-titulo reveal">Beneficios</h2>
-      <div class="lista">
-        <div class="item reveal"><span class="punto"></span><span>Trabajo en equipo</span></div>
-        <div class="item reveal"><span class="punto"></span><span>Martes a sábado</span></div>
-        <div class="item reveal"><span class="punto"></span><span>Horario de 9:30 a 7:00 pm</span></div>
-      </div>
-    </div>
-  </section>
-
-  <div class="cierre">
-    <h2>Da el siguiente paso</h2>
-    <p>Escríbenos y con gusto te damos toda la información.</p>
-    <a class="wa-btn" href="https://wa.me/528129442008?text=Hola%2C%20me%20interesa%20la%20vacante%20de%20Recepcionista%20en%20Mondou%20San%20Pedro.%20Quiero%20m%C3%A1s%20informaci%C3%B3n.">
-      <svg viewBox="0 0 32 32" fill="currentColor"><path d="M16 3C9.4 3 4 8.4 4 15c0 2.1.6 4.2 1.6 6L4 29l8.2-1.6c1.7.9 3.7 1.4 5.8 1.4 6.6 0 12-5.4 12-12S22.6 3 16 3zm0 21.8c-1.8 0-3.6-.5-5.1-1.4l-.4-.2-4.9 1 .9-4.8-.3-.4C5.2 18.3 4.7 16.7 4.7 15 4.7 8.8 9.8 3.7 16 3.7S27.3 8.8 27.3 15 22.2 24.8 16 24.8zm6.6-8.2c-.4-.2-2.1-1-2.4-1.1-.3-.1-.6-.2-.8.2-.2.4-.9 1.1-1.1 1.3-.2.2-.4.3-.8.1-.4-.2-1.5-.6-2.9-1.8-1.1-1-1.8-2.2-2-2.6-.2-.4 0-.6.2-.8.2-.2.4-.4.5-.7.2-.2.2-.4.4-.6.1-.3 0-.5 0-.7-.1-.2-.8-2-1.1-2.7-.3-.7-.6-.6-.8-.6h-.7c-.2 0-.6.1-.9.4-.3.4-1.2 1.2-1.2 2.9s1.2 3.4 1.4 3.6c.2.2 2.5 3.8 6 5.3.8.4 1.5.6 2 .7.8.3 1.6.2 2.2.1.7-.1 2.1-.8 2.4-1.7.3-.8.3-1.6.2-1.7-.1-.2-.3-.3-.7-.4z"/></svg>
-      Escríbenos por WhatsApp
-    </a>
-    <div class="nota">San Pedro Garza García · Nuevo León</div>
+    <div><a class="btn" href="#aplicar" data-cta="hero">Quiero aplicar</a></div>
+    <div class="meta-chips"><span>Nómina + prestaciones</span><span>Plan de carrera</span></div>
   </div>
+</header>
 
-  <footer>Mondou Luxury Salon</footer>
+<!-- INGRESO -->
+<section class="bloque">
+  <div class="wrap">
+    <div class="kicker reveal">Tu ingreso</div>
+    <h2 class="titulo reveal">Un sueldo que crece contigo</h2>
+    <div class="cards">
+      <div class="card full reveal">
+        <div class="c-lbl">Ingreso mensual potencial</div>
+        <div class="c-val oro-txt">Más de $20,000</div>
+        <div class="c-txt">Sueldo base + incentivos por desempeño del equipo</div>
+      </div>
+      <div class="card reveal">
+        <div class="c-lbl">Pago</div>
+        <div class="c-val">Quincenal</div>
+        <div class="c-txt">En nómina formal</div>
+      </div>
+      <div class="card reveal">
+        <div class="c-lbl">Prestaciones</div>
+        <div class="c-val">De ley</div>
+        <div class="c-txt">IMSS, vacaciones y aguinaldo</div>
+      </div>
+    </div>
+    <p class="intro reveal" style="font-size:14px">Los detalles del esquema de ingreso se explican en la entrevista.</p>
+  </div>
+</section>
+
+<!-- CARRERA -->
+<section class="bloque">
+  <div class="wrap">
+    <div class="kicker reveal">Plan de carrera</div>
+    <h2 class="titulo reveal">Empiezas en recepción.<br>Puedes llegar a gerente.</h2>
+    <div class="ruta">
+      <div class="paso reveal"><div class="n">I</div><div><h3>Anfitriona</h3><p>Recepción, agenda, cobro y la experiencia de cada cliente.</p></div></div>
+      <div class="paso reveal"><div class="n">II</div><div><h3>Centro de Mando</h3><p>Coordinas la operación diaria del salón y del equipo.</p></div></div>
+      <div class="paso reveal"><div class="n">III</div><div><h3>Gerente de Sucursal</h3><p>Liderazgo, resultados y crecimiento dentro de la marca.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- PERFIL -->
+<section class="bloque">
+  <div class="wrap">
+    <div class="kicker reveal">Tu perfil</div>
+    <h2 class="titulo reveal">Lo que buscamos</h2>
+    <div class="lista">
+      <div class="item reveal"><span class="punto"></span><span>Imagen impecable y gusto por el estilo<small>Nuestro uniforme es total look negro.</small></span></div>
+      <div class="item reveal"><span class="punto"></span><span>Experiencia en caja, cobro o atención al cliente<small>Ideal si vienes de boutique, hotel, restaurante o salón.</small></span></div>
+      <div class="item reveal"><span class="punto"></span><span>Organizada, resolutiva y con don de gente</span></div>
+      <div class="item reveal"><span class="punto"></span><span>Manejo de computadora y celular<small>Agenda digital y punto de venta.</small></span></div>
+      <div class="item reveal"><span class="punto"></span><span>Inglés conversacional<small>Deseable, no indispensable.</small></span></div>
+    </div>
+  </div>
+</section>
+
+<!-- DETALLES -->
+<section class="bloque">
+  <div class="wrap">
+    <div class="kicker reveal">El día a día</div>
+    <h2 class="titulo reveal">Detalles del puesto</h2>
+    <div class="lista">
+      <div class="item reveal"><span class="punto"></span><span>Martes a sábado · 9:30 am a 7:00 pm<small>Domingo y lunes libres.</small></span></div>
+      <div class="item reveal"><span class="punto"></span><span>Capacitación pagada desde el primer día</span></div>
+      <div class="item reveal"><span class="punto"></span><span>Equipo de estilistas que respalda las ventas</span></div>
+      <div class="item reveal"><span class="punto"></span><span>Salón de lujo en San Pedro Garza García</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- FORM -->
+<section class="bloque" id="aplicar">
+  <div class="wrap">
+    <div class="kicker reveal">Aplica en 1 minuto</div>
+    <h2 class="titulo reveal">Cuéntanos de ti</h2>
+    <p class="intro reveal">Contesta estas preguntas y te llevamos a WhatsApp con tu información lista.</p>
+
+    <form class="form-box reveal" id="f" novalidate>
+      <div class="q">
+        <label for="nombre"><b>1.</b>Tu nombre</label>
+        <input id="nombre" type="text" autocomplete="name" placeholder="Nombre y apellido">
+      </div>
+      <div class="q">
+        <div class="ql"><b>2.</b>¿Tienes experiencia en caja, cobro o atención al cliente?</div>
+        <div class="opts" data-name="exp">
+          <button type="button" class="opt" data-v="Sí, más de 1 año">Sí, más de 1 año</button>
+          <button type="button" class="opt" data-v="Sí, menos de 1 año">Sí, menos de 1 año</button>
+          <button type="button" class="opt" data-v="Sin experiencia">Sin experiencia</button>
+        </div>
+      </div>
+      <div class="q">
+        <div class="ql"><b>3.</b>¿Tienes disponibilidad de martes a sábado, 9:30 a 7:00 pm?</div>
+        <div class="opts" data-name="disp">
+          <button type="button" class="opt" data-v="Sí, total">Sí, total</button>
+          <button type="button" class="opt" data-v="No por ahora">No por ahora</button>
+        </div>
+      </div>
+      <div class="q">
+        <label for="zona"><b>4.</b>¿En qué colonia o municipio vives?</label>
+        <input id="zona" type="text" placeholder="Ej. Santa Catarina, Valle Oriente…">
+      </div>
+      <div class="q">
+        <label for="ig"><b>5.</b>Tu Instagram</label>
+        <input id="ig" type="text" autocapitalize="off" autocorrect="off" placeholder="@usuario">
+      </div>
+      <button type="submit" class="btn" id="enviar">
+        <svg viewBox="0 0 32 32" fill="currentColor" aria-hidden="true"><path d="M16 3C9.4 3 4 8.4 4 15c0 2.1.6 4.2 1.6 6L4 29l8.2-1.6c1.7.9 3.7 1.4 5.8 1.4 6.6 0 12-5.4 12-12S22.6 3 16 3zm0 21.8c-1.8 0-3.6-.5-5.1-1.4l-.4-.2-4.9 1 .9-4.8-.3-.4C5.2 18.3 4.7 16.7 4.7 15 4.7 8.8 9.8 3.7 16 3.7S27.3 8.8 27.3 15 22.2 24.8 16 24.8zm6.6-8.2c-.4-.2-2.1-1-2.4-1.1-.3-.1-.6-.2-.8.2-.2.4-.9 1.1-1.1 1.3-.2.2-.4.3-.8.1-.4-.2-1.5-.6-2.9-1.8-1.1-1-1.8-2.2-2-2.6-.2-.4 0-.6.2-.8.2-.2.4-.4.5-.7.2-.2.2-.4.4-.6.1-.3 0-.5 0-.7-.1-.2-.8-2-1.1-2.7-.3-.7-.6-.6-.8-.6h-.7c-.2 0-.6.1-.9.4-.3.4-1.2 1.2-1.2 2.9s1.2 3.4 1.4 3.6c.2.2 2.5 3.8 6 5.3.8.4 1.5.6 2 .7.8.3 1.6.2 2.2.1.7-.1 2.1-.8 2.4-1.7.3-.8.3-1.6.2-1.7-.1-.2-.3-.3-.7-.4z"/></svg>
+        Enviar por WhatsApp
+      </button>
+      <p class="aviso" id="aviso">Respondemos en menos de 24 horas.</p>
+    </form>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="bloque">
+  <div class="wrap">
+    <div class="kicker reveal">Preguntas frecuentes</div>
+    <h2 class="titulo reveal">Antes de aplicar</h2>
+    <div style="margin-top:36px">
+      <details class="reveal"><summary>¿Cómo es el inicio?</summary><p>Comienzas con un periodo de prueba con capacitación pagada. Al aprobarlo entras a nómina quincenal con prestaciones de ley.</p></details>
+      <details class="reveal"><summary>¿Necesito experiencia en salón?</summary><p>No es indispensable. Si tienes experiencia en caja, recepción o atención al cliente, te capacitamos en todo lo demás.</p></details>
+      <details class="reveal"><summary>¿Dónde está el salón?</summary><p>En San Pedro Garza García, Nuevo León. Te compartimos la ubicación exacta al agendar tu entrevista.</p></details>
+      <details class="reveal"><summary>¿Cómo es el proceso?</summary><p>Envías tus respuestas por WhatsApp, revisamos tu perfil y, si encaja, te agendamos una entrevista presencial esa misma semana.</p></details>
+    </div>
+  </div>
+</section>
+
+<footer>Mondou Luxury Salon · San Pedro Garza García</footer>
+
+<div class="sticky" id="sticky"><a class="btn" href="#aplicar" data-cta="sticky">Aplicar ahora</a></div>
 
 <script>
+  // Reveal
   const obs = new IntersectionObserver((entries)=>{
-    entries.forEach((e,i)=>{
-      if(e.isIntersecting){ setTimeout(()=>e.target.classList.add('visible'), (i%4)*80); obs.unobserve(e.target); }
-    });
-  },{threshold:.15});
+    entries.forEach((e,i)=>{ if(e.isIntersecting){ setTimeout(()=>e.target.classList.add('visible'),(i%4)*70); obs.unobserve(e.target);} });
+  },{threshold:.12});
   document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
+
+  // Sticky: visible tras el hero, oculto en el formulario
+  const sticky=document.getElementById('sticky'), hero=document.querySelector('.hero'), aplicar=document.getElementById('aplicar');
+  let heroOut=false, formIn=false;
+  const upd=()=>sticky.classList.toggle('show', heroOut && !formIn);
+  new IntersectionObserver(([e])=>{heroOut=!e.isIntersecting;upd();},{threshold:0}).observe(hero);
+  new IntersectionObserver(([e])=>{formIn=e.isIntersecting;upd();},{threshold:.05}).observe(aplicar);
+
+  // CTA → evento
+  let started=false;
+  document.querySelectorAll('[data-cta]').forEach(a=>a.addEventListener('click',()=>track('ViewContent',{content_name:'aplicar_'+a.dataset.cta})));
+
+  // Opciones
+  const sel={};
+  document.querySelectorAll('.opts').forEach(g=>{
+    g.querySelectorAll('.opt').forEach(b=>b.addEventListener('click',()=>{
+      g.querySelectorAll('.opt').forEach(x=>x.classList.remove('on'));
+      b.classList.add('on'); sel[g.dataset.name]=b.dataset.v;
+      if(!started){started=true;track('InitiateCheckout',{content_name:'form_recepcion'});}
+    }));
+  });
+
+  // Envío
+  const WA='528129442008';
+  document.getElementById('f').addEventListener('submit',ev=>{
+    ev.preventDefault();
+    const v=id=>document.getElementById(id).value.trim();
+    const nombre=v('nombre'), zona=v('zona'); let ig=v('ig');
+    const aviso=document.getElementById('aviso');
+    if(!nombre||!sel.exp||!sel.disp||!zona||!ig){
+      aviso.textContent='Por favor contesta las 5 preguntas.'; aviso.className='aviso warn'; return;
+    }
+    if(ig && !ig.startsWith('@') && !ig.includes('instagram.com')) ig='@'+ig;
+    const msg=
+`Hola, quiero aplicar a la vacante de *Anfitriona / Recepción* en Mondou San Pedro.
+
+• Nombre: ${nombre}
+• Experiencia en caja/atención: ${sel.exp}
+• Disponibilidad mar–sáb 9:30–7:00: ${sel.disp}
+• Vivo en: ${zona}
+• Instagram: ${ig}`;
+    track('Lead',{content_name:'recepcion_san_pedro'});
+    window.location.href='https://wa.me/'+WA+'?text='+encodeURIComponent(msg);
+  });
 </script>
 </body>
 </html>
